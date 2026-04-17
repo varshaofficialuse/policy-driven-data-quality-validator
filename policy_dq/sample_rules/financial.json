@@ -1,0 +1,42 @@
+[
+    {
+        "field_name": "account_id",
+        "rule_type": "required",
+        "params": {}
+    },
+    {
+        "field_name": "account_id",
+        "rule_type": "unique",
+        "params": {}
+    },
+    {
+        "field_name": "amount",
+        "rule_type": "type_check",
+        "params": {
+            "expected_type": "float"
+        }
+    },
+    {
+        "field_name": "amount",
+        "rule_type": "range",
+        "params": {
+            "min": 0
+        }
+    },
+    {
+        "field_name": "currency",
+        "rule_type": "regex",
+        "params": {
+            "pattern": "[A-Z]{3}"
+        }
+    },
+    {
+        "field_name": "end_date",
+        "rule_type": "cross_field",
+        "params": {
+            "compare_field": "start_date",
+            "operator": "gt",
+            "parse_dates": true
+        }
+    }
+]

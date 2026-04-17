@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "name": "Run Tests After Task Completion",
+  "description": "Runs pytest after every spec task is marked complete, ensuring no regressions were introduced.",
+  "version": "1",
+  "when": {
+    "type": "postTaskExecution"
+  },
+  "then": {
+    "type": "runCommand",
+    "command": "uv run pytest tests/ --tb=short -q"
+  }
+}

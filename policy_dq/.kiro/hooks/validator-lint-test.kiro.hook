@@ -1,0 +1,17 @@
+{
+  "enabled": true,
+  "name": "Lint & Test on Validator Save",
+  "description": "Runs ruff linter and pytest automatically whenever a file inside src/policy_dq/rules/ or src/policy_dq/validators/ is modified, ensuring core validation logic stays clean and passing.",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "src/policy_dq/rules/*.py",
+      "src/policy_dq/validators/*.py"
+    ]
+  },
+  "then": {
+    "type": "runCommand",
+    "command": "uv run ruff check src/policy_dq/rules/ src/policy_dq/validators/ && uv run pytest tests/ --tb=short -q"
+  }
+}

@@ -1,0 +1,4 @@
+user_id,email,age,full_name,start_date,end_date
+1,alice@example.com,30,Alice Smith,2024-01-01,2024-06-01
+2,bob@example.com,25,Bob Jones,2024-02-01,2024-08-01
+3,carol@example.com,40,Carol White,2024-03-01,2024-09-01

@@ -1,0 +1,30 @@
+# Onboarding policy — validates new user registration data
+- field_name: user_id
+  rule_type: required
+
+- field_name: user_id
+  rule_type: unique
+
+- field_name: email
+  rule_type: required
+
+- field_name: email
+  rule_type: regex
+  params:
+    pattern: "[^@]+@[^@]+\\.[^@]+"
+
+- field_name: age
+  rule_type: range
+  params:
+    min: 18
+    max: 120
+
+- field_name: full_name
+  rule_type: required
+
+- field_name: end_date
+  rule_type: cross_field
+  params:
+    compare_field: start_date
+    operator: gt
+    parse_dates: true

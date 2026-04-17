@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "name": "Remind to Add Tests on New Source File",
+  "description": "When a new Python file is created in src/policy_dq/, reminds the agent to add corresponding unit or integration tests.",
+  "version": "1",
+  "when": {
+    "type": "fileCreated",
+    "patterns": [
+      "src/policy_dq/**/*.py"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "A new source file was just created. Check whether it has corresponding tests in tests/unit/ or tests/integration/. If not, suggest what test cases should be added to cover the new functionality."
+  }
+}
